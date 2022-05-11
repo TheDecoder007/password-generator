@@ -4,7 +4,7 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 var upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";     
-var lowerLetters = "abcdefghijklmnopqrstuvwxyz";  
+var lowerLetters = "abcdefghijklmnopqrstuvwxyz";   
 var passNumbers = "1234567890";
 
 // Write password to the #password input
@@ -23,6 +23,7 @@ generatePassword = function() {
       return generatePassword();
   }
       if (passLength >= 8 || passLength <= 12)  {
+        console.log(passLength);
       var chooseCaps = window.confirm("Would you like to use upper case letters?");
       var chooseLow = window.confirm("Would you like use lower case letters?");
       var chooseNum = window.confirm("Would you like to use numbers?");
@@ -30,7 +31,7 @@ generatePassword = function() {
             if(chooseCaps === true && chooseLow === true && chooseNum === true) {
                return upperLetters[Math.floor(Math.random() * upperLetters.length)] +
                 lowerLetters[Math.floor(Math.random() * lowerLetters.length)] + 
-                passNumbers[Math.floor(Math.random() * passNumbers.length)] 
+                passNumbers[Math.floor(Math.random() * passNumbers.length)]
             }    
         else if(chooseCaps === false && chooseLow === true && chooseNum === true) {
               return lowerLetters[Math.floor(Math.random() * lowerLetters.length)] +
