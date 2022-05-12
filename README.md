@@ -1,4 +1,4 @@
-# password-generator
+# Password Generator
 A password generator with multiple criteria you choose
 
 
@@ -13,8 +13,8 @@ GitHub link https://github.com/TheDecoder007/password-generator
 Deploy link: https://thedecoder007.github.io/password-generator/
 
 ### Other Info
-* displays current day at top of screen
-* type in a task, and use save button for persistence
-* easily edit tasks and re-save
+* Choose between 8 - 20 characters
+* Choose any combination of lower case, upper case, or numbers
+
 
 ## Screenshot
