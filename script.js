@@ -57,7 +57,7 @@ function writePassword() {
 }
 
 var generatePassword = () => {
-  var passLength = window.prompt("Please choose your password length, between 8 and 20 characters.")
+  var passLength = window.prompt("Please choose your password length, between 8 and 128 characters.")
     if (LengthChoice(passLength)) {
       return (passConfirm(passLength))
     } else {}
@@ -65,10 +65,10 @@ var generatePassword = () => {
 
 var LengthChoice = (userChoice) => {
   if (userChoice === null){
-    window.alert("Please choose a length between 8 and 20")
+    window.alert("Please choose a length between 8 and 128")
     return false
-  } else if (userChoice < 8 || userChoice > 20) {
-    window.alert("Please choose a length between 8 and 20")
+  } else if (userChoice < 8 || userChoice > 128) {
+    window.alert("Please choose a length between 8 and 128")
     return false
   }
     return true
