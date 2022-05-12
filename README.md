@@ -17,4 +17,4 @@ Deploy link: https://thedecoder007.github.io/password-generator/
 * Choose any combination of lower case, upper case, or numbers
 
 
-## Screenshot
+## Screenshot![Screenshot (741)](https://user-images.githubusercontent.com/101135574/168130177-77db2a1d-3eae-42de-b638-ed3c3073220c.png)
