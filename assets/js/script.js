@@ -4,6 +4,7 @@ var generateBtn = document.querySelector("#generate");
 var upperLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];     
 var lowerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];   
 var passNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0,];
+var specialChar = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ":", ";", "<", "=", ">", "?", "@", "`", "~"];
 
 // Write password to the #password input
 function writePassword() {
@@ -20,31 +21,53 @@ function writePassword() {
     var chooseCaps = window.confirm("Would you like to use upper case letters?");
     var chooseLow = window.confirm("Would you like use lower case letters?");
     var chooseNum = window.confirm("Would you like to use numbers?");
+    var chooseSpec = window.confirm("Would you like to use special characters?");
 
       let randomPass = [];
 
-          if(chooseCaps === true && chooseLow === true && chooseNum === true) {
-            randomPass = randomPass.concat(upperLetters, lowerLetters, passNumbers);
-            }    
-        else if(chooseCaps === false && chooseLow === true && chooseNum === true) {
+      if(chooseCaps === true && chooseLow === true && chooseNum === true && chooseSpec === true) {
+        randomPass = randomPass.concat(upperLetters, lowerLetters, passNumbers, specialChar);
+        } 
+      if(chooseCaps === false && chooseLow === true && chooseNum === true && chooseSpec === true) {
+        randomPass = randomPass.concat(lowerLetters, passNumbers, specialChar);
+        }
+      if(chooseCaps === true && chooseLow === false && chooseNum === true && chooseSpec === true) {
+        randomPass = randomPass.concat(upperLetters, passNumbers, specialChar);
+        }
+      if(chooseCaps === true && chooseLow === true && chooseNum === false && chooseSpec === true) {
+        randomPass = randomPass.concat(upperLetters, lowerLetters, specialChar);
+        }
+        if(chooseCaps === false && chooseLow === false && chooseNum === true && chooseSpec === true) {
+          randomPass = randomPass.concat(passNumbers, specialChar);
+        }
+        if(chooseCaps === false && chooseLow === true && chooseNum === false && chooseSpec === true) {
+          randomPass = randomPass.concat(lowerLetters, specialChar);
+        }
+        if(chooseCaps === true && chooseLow === false && chooseNum === false && chooseSpec === true) {
+          randomPass = randomPass.concat(upperLetters, specialChar);
+        }
+        if(chooseCaps === true && chooseLow === true && chooseNum === true && chooseSpec === false) {
+          randomPass = randomPass.concat(upperLetters, lowerLetters, passNumbers);
+        }    
+        else if(chooseCaps === false && chooseLow === true && chooseNum === true && chooseSpec === false) {
           randomPass = randomPass.concat(lowerLetters, passNumbers);        
-            }
-        else if(chooseCaps === true && chooseLow === false && chooseNum == true) {
+        }
+        else if(chooseCaps === true && chooseLow === false && chooseNum == true && chooseSpec === false) {
           randomPass = randomPass.concat(upperLetters, passNumbers);
         }
-        else if(chooseCaps === true && chooseLow === true && chooseNum == false) {
+        else if(chooseCaps === true && chooseLow === true && chooseNum == false && chooseSpec === false) {
           randomPass = randomPass.concat(upperLetters, lowerLetters);
         }
-        else if(chooseCaps === false && chooseLow === false && chooseNum == true) {
+        else if(chooseCaps === false && chooseLow === false && chooseNum == true && chooseSpec === false) {
           randomPass = randomPass.concat(passNumbers);
         }
-        else if(chooseCaps === false && chooseLow === true && chooseNum == false) {
+        else if(chooseCaps === false && chooseLow === true && chooseNum == false && chooseSpec === false) {
           randomPass = randomPass.concat(lowerLetters);          
         }
-        else if(chooseCaps === true && chooseLow === false && chooseNum == false) {
+        else if(chooseCaps === true && chooseLow === false && chooseNum == false && chooseSpec === false) {
           randomPass = randomPass.concat(upperLetters);
         }
-        else if (chooseCaps === false && chooseLow === false && chooseNum === false) {
+        else if (chooseCaps === false && chooseLow === false && chooseNum === false && chooseSpec === false) {
               window.alert("You need to choose at lease 1 criteria")
               return generatePassword();
             }
